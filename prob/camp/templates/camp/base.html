@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    {% block head %}{% endblock %}
+    <style>
+        body {
+            background-color: #4d4d4d;
+            background-image: url("https://i.ibb.co/1TYzJ6y/shadow-isles.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #19123c;
+            border-radius: 5px;
+            max-width: auto;
+            margin-bottom: 20px;
+        }
+        
+        li.home a {
+            float: left;
+        }
+        
+        li.home a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 7px;
+            margin: 16px;
+            text-decoration: none;
+        }
+        
+        li.home a:hover {
+            background-color: #111111;
+        }
+        
+        li.titulo {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 20px;
+            text-decoration: none;
+            font-size: larger;
+        }
+        
+        li.pesq [type=text] {
+            margin-right: none;
+            background-color: #4D4575;
+            float: right;
+            margin-top: 19px;
+            display: block;
+            width: 450px;
+            height: 22px;
+            text-decoration: none;
+            border-radius: 5px;
+            border-color: #19123c;
+            border-style: solid;
+            background-image: url("https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png");
+            background-position: left center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding-left: 25px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        li.pesq:focus {
+            width: 500px;
+        }
+        
+        button.bp {
+            background-color: #4D4575;
+            height: 26px;
+            float: right;
+            border: none;
+            margin-top: 20px;
+            margin-left: none;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Probuilds Paraguay</title>
+    <!-- Add additional CSS in static file -->
+    <script src="{% static 'prob/pesq.js' %}"></script>
+
+</head>
+
+
+
+
+<body>
+
+    <div>
+        <ul class="barra">
+            <li class="titulo">Probuilds Paraguay</li>
+            <li class="home"><a href="/home">Homepage</a></li class="home">
+            <li class="home"><a href="/camp">Campeões</a></li class="home">
+            <button class="bp" onclick="Pesquisa()">Pesquisar</button>
+            <div class="barra">
+                <li class="pesq">
+                    <input type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar Campeões">
+                </li>
+            </div>
+        </ul class="barra">
+    </div>
+
+    {% block body %}{% endblock %}
+</body>
+
+</html>
