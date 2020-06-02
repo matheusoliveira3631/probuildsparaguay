@@ -1,0 +1,208 @@
+/*Base.html css */
+
+body {
+    background-color: #4d4d4d;
+    background-image: url("https://i.ibb.co/1TYzJ6y/shadow-isles.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #19123c;
+    border-radius: 5px;
+    max-width: auto;
+    margin-bottom: 20px;
+}
+
+li.home a {
+    float: left;
+}
+
+li.home a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 7px;
+    margin: 16px;
+    text-decoration: none;
+}
+
+li.home a:hover {
+    background-color: #111111;
+}
+
+li.titulo {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    margin: 20px;
+    text-decoration: none;
+    font-size: larger;
+}
+
+li.pesq [type=text] {
+    margin-right: none;
+    background-color: #4D4575;
+    float: right;
+    margin-top: 19px;
+    display: block;
+    width: 450px;
+    height: 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: #19123c;
+    border-style: solid;
+    background-image: url("https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png");
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+li.pesq:focus {
+    width: 500px;
+}
+
+button.bp {
+    background-color: #4D4575;
+    height: 26px;
+    float: right;
+    border: none;
+    margin-top: 20px;
+    margin-left: none;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+
+/*Build.html css*/
+
+.camp {
+    margin-top: 40px;
+    margin-left: 20px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+    background-color: #15232C;
+    border-radius: 5px;
+}
+
+h2.nome {
+    grid-column-start: 2;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    color: #e0e0e0
+}
+
+.titulo {
+    grid-row: 2;
+    grid-column: 2;
+    color: #a5a5a5
+}
+
+.splash {
+    grid-row: 1 / span 3;
+}
+
+div.splash img {
+    width: 200px;
+    height: 363px;
+    border-radius: 10px;
+}
+
+.itens {
+    margin-top: 40px;
+    margin-right: 20px;
+    display: inline-grid;
+    grid-column-gap: 20px;
+    background-color: #15232C;
+    border-radius: 5px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    float: right;
+}
+
+.itens img {
+    border-radius: 10px;
+    height: 55px;
+    width: 55px;
+}
+
+.core_texto {
+    grid-row: 1;
+    grid-column: 2;
+    border-bottom-style: ridge;
+}
+
+.core {
+    grid-row: 2;
+    grid-column: 2;
+    text-align: center;
+}
+
+.itens h3 {
+    color: #a5a5a5
+}
+
+.situacionais_texto {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.situacionais {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.iniciais {
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.iniciais_texto {
+    grid-row: 1;
+    grid-column: 1;
+    border-bottom-style: ridge;
+}
+
+.completa_texto {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+}
+
+.completa {
+    grid-row: 6;
+    grid-column: 1 / span 2;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+}
+
+
+/*Erro.html css*/
+
+div.erro img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 1160px;
+    height: 756px;
+}

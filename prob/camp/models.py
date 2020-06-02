@@ -1,12 +1,6 @@
 from django.db import models
 ###############################################
-#Cassiopeia framework codes
-import cassiopeia as cass
-from cassiopeia import Champions, Champion, Summoner
-
-
-cass.set_riot_api_key("RGAPI-65099b18-8105-4a7c-ba30-9ce887fe6daf") 
-cass.set_default_region("BR")
+#teacher vai toma no cu
 ###############################################
 # Create your models here.
 
