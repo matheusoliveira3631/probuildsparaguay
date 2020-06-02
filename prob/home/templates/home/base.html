@@ -1,36 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
-
+<html>
 <head>
-    {% block head %}{% endblock %}
-    <style>
-
-    </style>
-    <title>Probuilds Paraguay</title>
-    <!-- Add additional CSS in static file -->
-    <script src="{% static 'prob/pesq.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'prob/style.css'%}">
+        <meta charset="UTF-8">
+        <title>ProBuildsParaguay</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <!--Se por acaso n for o CSS provalvelmente resolvera mudando diretorio do CSS-->
+        <link rel="stylesheet" href="./style/style.css">
 
 </head>
 
 <body>
+        <div id="page-home">
+            <div class="content">
 
-    <div>
-        <ul class="barra">
-            <li class="titulo">Probuilds Paraguay</li>
-            <li class="home"><a href="/home">Homepage</a></li class="home">
-            <li class="home"><a href="/camp">Campeões</a></li class="home">
-            <button class="bp" onclick="Pesquisa()">Pesquisar</button>
-            <div class="barra">
-                <li class="pesq">
-                    <input type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar Campeões">
-                </li>
+                <header>
+                    <h3>ProBuilds Paraguay</h3>
+                    <a href="#">Campeões</a>
+                    <a href="#">Builds</a>
+                    <input type="text" placeholder="ex: Talon">
+                    <!--Imagens que vem da pasta assest que talvez eu n consiga botar kkkkk (ai é o icone de pesquisa)-->
+                    <span><img id="search-icon" src="./assest/search--v2.png" width="30px" height="30px"></span>
+                </header>
+
+                <main>
+                        <h4 class="info">ProBuildsParaguay é uma plataforma que ajuda <br> você a melhorar no game</h4>
+                        <h3>Saiba tudo sobre seu campeão</h3>
+                </main>
             </div>
-        </ul class="barra">
-    </div>
-
-    {% block body %}{% endblock %}
+        </div>
 </body>
-
 </html>
