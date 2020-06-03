@@ -1,4 +1,48 @@
-<!DOCTYPE html> {% extends 'home/base.html' %}
-<html lang="en">
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>ProBuildsParaguay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'prob/home_style.css'%}">
+    <script src="{% static 'prob/pesq.js' %}"></script>
+
+</head>
+
+<body>
+    <main>
+        <header>
+
+            <h3 class="titulo">ProBuildsParaguay</h3>
+            <a href="/home">Homepage</a>
+            <a href="/camp">Campeões</a>
+            <div class="pesquisa">
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Ex: Talon">
+                <button class="bp" onclick="Pesquisa()"></button>
+            </div>
+
+        </header>
+        <section>
+            <div class="info">
+                <h3>ProBuildsParaguay é uma plataforma que ajuda você <br>a melhorar no game</h3>
+                <h3>"Fuck sites" ("Sites foda")<br> -Elon musk</h3>
+                <h3>"10/10" <br> -IGN</h3>
+            </div>
+            <div id="rotações">
+                <h3 id="rot_texto">Campeões em rotação grátis</h3>
+
+                {% for nome in ftp_nomes%}
+                <a href='/camp/{{nome}}'>
+                    <img class='SQasset' src='http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/{{nome}}.png' alt='{{nome}}.png'>
+                </a>
+                {%endfor%}
+            </div>
+
+        </section>
+    </main>
+
+</body>
 
 </html>

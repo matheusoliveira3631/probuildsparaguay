@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7fff7;
+}
+
+.info {
+    margin-top: 50px;
+    margin-left: 75px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    padding: 5px;
+    border-radius: 7px;
+}
+
+header a:hover {
+    background-color: #cccccc;
+    opacity: 1;
+}
+
+.titulo {
+    margin-left: 50px;
+}
+
+.pesquisa {
+    display: flex;
+    margin-right: 25px;
+    margin-top: 10px;
+}
+
+#pesquisa {
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+#pesquisa:focus {
+    color: #00B4CC;
+}
+
+.bp {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background-image: url("https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png");
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.SQasset {
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+}
+
+#rotações {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 15px;
+    column-gap: 15px;
+    background-color: #eeeeee;
+    padding: 15px;
+    border-radius: 7px;
+    margin-top: 75px;
+}
+
+#rot_texto {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    justify-self: center;
+    align-self: center;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+}
