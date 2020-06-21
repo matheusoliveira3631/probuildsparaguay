@@ -1,4 +1,44 @@
-<!DOCTYPE html> {% extends 'camp/base.html' %}
-<html lang="en">
+<!DOCTYPE html>
+<html>
+{% load static %}
 
-</html>
+<head>
+    <meta charset="UTF-8">
+    <title>ProBuildsParaguay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'prob/home_style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'prob/camp_style.css'%}">
+    <script src="{% static 'prob/pesq.js' %}"></script>
+
+</head>
+
+<body>
+    <main>
+        <header>
+
+            <h3 class="titulo">ProBuildsParaguay</h3>
+            <a href="/home">Homepage</a>
+            <a href="/camp">Campeões</a>
+            <div class="pesquisa">
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Ex: Talon">
+                <button class="bp" onclick="Pesquisa()"></button>
+            </div>
+        </header>
+        <section>
+
+            {% for camp in camps%}
+            <div class='campeao'>
+                <a href='/camp/{{camp.nome}}'>
+                    <img class='camp_icone' src='http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/{{camp.nomelimpo}}.png' alt='{{camp.nome}}.png'>
+                </a>
+                <h3 id=camp_nome>{{camp.nome}}</h3>
+                <h4 id=camp_titulo>"{{camp.titulo}}"</h4>
+            </div>
+
+            {%endfor%}
+            </div>
+        </section>
+        <footer class='footer'>
+            <h10>SeuMadroguinhas e SrWalkerB ™ Todos os direitos reservados</h10>
+        </footer>
+    </main>

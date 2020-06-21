@@ -1,0 +1,76 @@
+#splash {
+    width: 200px;
+    height: 363px;
+    border-radius: 10px;
+    grid-row: 1 / span 6;
+    grid-column: 1;
+}
+
+#camp {
+    margin: 30px 0 10px 25px;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    background-color: #efeff0;
+}
+
+#info {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#titulo {
+    margin-top: -10px
+}
+
+.spell_img {
+    border-radius: 7px;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+#spells {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    margin-top: -15px;
+}
+
+#qspell {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#wspell {
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#espell {
+    grid-column: 2;
+    grid-row: 5;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+#rspell {
+    grid-column: 2;
+    grid-row: 6;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}

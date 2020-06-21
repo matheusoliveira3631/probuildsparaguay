@@ -24,7 +24,7 @@
             </div>
 
         </header>
-        <section>
+        <section id="section1">
             <div class="info">
                 <h3>ProBuildsParaguay é uma plataforma que ajuda você <br>a melhorar no game</h3>
                 <h3>"Fuck sites" ("Sites foda")<br> -Elon musk</h3>
@@ -33,14 +33,31 @@
             <div id="rotações">
                 <h3 id="rot_texto">Campeões em rotação grátis</h3>
 
-                {% for nome in ftp_nomes%}
-                <a href='/camp/{{nome}}'>
-                    <img class='SQasset' src='http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/{{nome}}.png' alt='{{nome}}.png'>
+                {% for dict in ftp_nomes%}
+                <a href='/camp/{{dict.nome}}'>
+                    <img class='SQasset' src='http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/{{dict.nomelimpo}}.png' alt='{{dict.nome}}.png'>
                 </a>
                 {%endfor%}
             </div>
-
         </section>
+        <section id='section2'>
+            <div id='rank'>
+                <h3 id='rank_titulo'>Rank da liga desafiante</h3>
+                {% for dado in player_data %}
+                <img id='icone' src='http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/{{dado.id}}.png'></img>
+                <h3 id='rank_texto'>• {{dado.nome}}({{dado.pdl}}PDL) </h3>
+                {%endfor%}
+            </div>
+            <div id=status>
+                <h3 id='status_texto'>Status dos servidores Riot Games</h3>
+                {% for service in server_data %}
+                <h2 id=serviço>• {{service.service_name}} : {{service.status}}</h2>
+                {%endfor%}
+            </div>
+        </section>
+        <footer class='footer'>
+            <h10>SeuMadroguinhas e SrWalkerB ™ Todos os direitos reservados</h10>
+        </footer>
     </main>
 
 </body>

@@ -1,60 +1,62 @@
-<!DOCTYPE html> {% extends 'camp/base.html' %}
-<html lang="en">
-{% block head %}
-<style>
+<!DOCTYPE html>
+<html>
+{% load static %}
 
-</style>
-{% endblock %} {% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{info.nome}} build ProBuildsParaguay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'prob/home_style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'prob/build_style.css'%}">
+    <script src="{% static 'prob/pesq.js' %}"></script>
 
-<div class="camp">
-    <div class="splash">
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{nome}}_0.jpg">
-    </div>
-    <div class="resumo">
-        <h2 class="nome">{{nome}}</h2>
-        <h5 class="titulo">"{{titulo}}"</h5>
-    </div>
-</div>
+</head>
 
-<div class="itens">
-    <div class="iniciais_texto">
-        <h3>Itens iniciais</h3>
-    </div>
-    <div class="iniciais">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{inicial1}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{inicial2}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{inicial3}}.png">
-    </div>
-    <div class="core_texto">
-        <h3>Itens core</h3>
-    </div>
-    <div class="core">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item1}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item2}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item3}}.png">
-    </div>
-    <div class="situacionais_texto">
-        <h3>Itens situacionais</h3>
-    </div>
-    <div class="situacionais">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item4}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item5}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item6}}.png">
-    </div>
-    <div class="completa_texto">
-    </div>
-    <div class="completa">
-        <h3>Build completa</h3>
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item1}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item2}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item3}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item4}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item5}}.png">
-        <img src="http://ddragon.leagueoflegends.com/cdn/10.9.1/img/item/{{item6}}.png">
-    </div>
-</div>
+<body>
+    <main>
+        <header>
+
+            <h3 class="titulo">ProBuildsParaguay</h3>
+            <a href="/home">Homepage</a>
+            <a href="/camp">Campeões</a>
+            <div class="pesquisa">
+                <input type="text" id="pesquisa" name="pesquisa" placeholder="Ex: Talon">
+                <button class="bp" onclick="Pesquisa()"></button>
+            </div>
+
+        </header>
 
 
-{%endblock%}
+
+        <section>
+            <div id="camp">
+                <img id='splash' src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{info.nomelimpo}}_0.jpg">
+                <div id="info">
+                    <h2 id="nome">{{info.nome}}</h2>
+                    <h5 id="titulo">"{{info.titulo}}"</h5>
+                </div>
+                <h3 id='spells'>Habilidades</h3>
+                <div id='qspell'>
+                    <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.qspell.id}}.png'>
+                    <h5 class='spell_txt'> • {{spells.qspell.nome}}</h5>
+                </div>
+                <div id='wspell'>
+                    <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.wspell.id}}.png'>
+                    <h5 class='spell_txt'> • {{spells.wspell.nome}}</h5>
+                </div>
+                <div id='espell'>
+                    <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.espell.id}}.png'>
+                    <h5 class='spell_txt'> • {{spells.espell.nome}}</h5>
+                </div>
+                <div id='rspell'>
+                    <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.rspell.id}}.png'>
+                    <h5 class='spell_txt'> • {{spells.rspell.nome}}</h5>
+                </div>
+        </section>
+        <footer class='footer'>
+            <h10>SeuMadroguinhas e SrWalkerB ™ Todos os direitos reservados</h10>
+        </footer>
+    </main>
+</body>
 
 </html>
