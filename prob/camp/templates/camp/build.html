@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>{{info.nome}} build ProBuildsParaguay</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'prob/home_style.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'prob/build_style.css'%}">
     <script src="{% static 'prob/pesq.js' %}"></script>
 
@@ -28,7 +27,7 @@
 
 
 
-        <section>
+        <section id='section1'>
             <div id="camp">
                 <img id='splash' src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{info.nomelimpo}}_0.jpg">
                 <div id="info">
@@ -36,27 +35,108 @@
                     <h5 id="titulo">"{{info.titulo}}"</h5>
                 </div>
                 <h3 id='spells'>Habilidades</h3>
+                <!--Champion Q spell-->
                 <div id='qspell'>
                     <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.qspell.id}}.png'>
                     <h5 class='spell_txt'> • {{spells.qspell.nome}}</h5>
                 </div>
+                <div id='qtip'>
+                    <div id='qtip_name'>
+                        <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.qspell.id}}.png'>
+                        <h5 class='spell_txt'> • {{spells.qspell.nome}}</h5>
+                    </div>
+                    <div class='tip_desc'>
+                        <h7>• {{spells.qspell.desc}}</h7>
+                    </div>
+                    <video class='spell_vid' height="150" width="300" autoplay loop muted>
+                        <source src={{spells.qspell.link}} type="video/webm">
+                    </video>
+                </div>
+                <!--Champion W spell-->
                 <div id='wspell'>
                     <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.wspell.id}}.png'>
                     <h5 class='spell_txt'> • {{spells.wspell.nome}}</h5>
                 </div>
+                <div id='wtip'>
+                    <div id='wtip_name'>
+                        <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.wspell.id}}.png'>
+                        <h5 class='spell_txt'> • {{spells.wspell.nome}}</h5>
+                    </div>
+                    <div class='tip_desc'>
+                        <h7>• {{spells.wspell.desc}}</h7>
+                    </div>
+                    <video class='spell_vid' height="150" width="300" autoplay loop muted>
+                        <source src={{spells.wspell.link}} type="video/webm">
+                    </video>
+                </div>
+                <!--Champion E spell-->
                 <div id='espell'>
                     <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.espell.id}}.png'>
                     <h5 class='spell_txt'> • {{spells.espell.nome}}</h5>
                 </div>
+                <div id='etip'>
+                    <div id='etip_name'>
+                        <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.espell.id}}.png'>
+                        <h5 class='spell_txt'> • {{spells.espell.nome}}</h5>
+                    </div>
+                    <div class='tip_desc'>
+                        <h7>• {{spells.espell.desc}}</h7>
+                    </div>
+                    <video class='spell_vid' height="150" width="300" autoplay loop muted>
+                        <source src={{spells.espell.link}} type="video/webm">
+                    </video>
+                </div>
+                <!--Champion ultimate-->
                 <div id='rspell'>
                     <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.rspell.id}}.png'>
                     <h5 class='spell_txt'> • {{spells.rspell.nome}}</h5>
                 </div>
+                <div id='rtip'>
+                    <div id='rtip_name'>
+                        <img class='spell_img' src='http://ddragon.leagueoflegends.com/cdn/10.12.1/img/spell/{{spells.rspell.id}}.png'>
+                        <h5 class='spell_txt'> • {{spells.rspell.nome}}</h5>
+                    </div>
+                    <div class='tip_desc'>
+                        <h7>• {{spells.rspell.desc}}</h7>
+                    </div>
+                    <video class='spell_vid' height="150" width="300" autoplay loop muted>
+                        <source src={{spells.rspell.link}} type="video/webm">
+                    </video>
+                </div>
+            </div>
+            
+           
         </section>
-        <footer class='footer'>
-            <h10>SeuMadroguinhas e SrWalkerB ™ Todos os direitos reservados</h10>
-        </footer>
+        <section id='section2'>
+            <div id='itens'>
+            <div id='iniciais'>
+                    <h3>Itens iniciais</h3>
+                    {%for item in iniciais%}
+                    <img class='item_img' src='http://ddragon.leagueoflegends.com/cdn/10.13.1/img/item/{{item}}.png'> {%endfor%}
+                </div>
+                <div id='early'>
+                    <h3>Early game</h3>
+                    {%for item in early%}
+                    <img class='item_img' src='http://ddragon.leagueoflegends.com/cdn/10.13.1/img/item/{{item}}.png'> {%endfor%}
+                </div>
+                <div id='late'>
+                    <h3>Situacionais</h3>
+                    {%for item in late%}
+                    <img class='item_img' src='http://ddragon.leagueoflegends.com/cdn/10.13.1/img/item/{{item}}.png'> {%endfor%}
+                </div>
+                <div id='full'>
+                    <h3>Build completa</h3>
+                    {%for item in full%}
+                    <img class='item_img' src='http://ddragon.leagueoflegends.com/cdn/10.13.1/img/item/{{item}}.png'> {%endfor%}
+
+                </div>
+            </div>
+        </section>
+
     </main>
+    <footer class='footer'>
+        <h10>SeuMadroguinhas e SrWalkerB ™ Todos os direitos reservados</h10>
+    </footer>
 </body>
 
 </html>

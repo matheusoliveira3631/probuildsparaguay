@@ -80,7 +80,7 @@ header a:hover {
     row-gap: 15px;
     column-gap: 15px;
     background-color: #efeff0;
-    padding: 15px;
+    padding: 25px;
     border-radius: 7px;
     margin-top: 75px;
 }
@@ -118,6 +118,7 @@ header a:hover {
     grid-template-rows: auto auto auto auto auto auto;
     background-color: #efeff0;
     border-radius: 7px;
+    padding: 15px;
 }
 
 #rank_titulo {
@@ -127,9 +128,29 @@ header a:hover {
     justify-self: center;
 }
 
-#status {
+#bans_title{
+    margin-bottom: 25px;
+}
+
+#bans{
+    display: flex;
+    flex-direction: column;
     background-color: #efeff0;
+    align-items: flex-start;
+    padding:20px;
     border-radius: 7px;
+}
+
+.banned{
+    display: flex;
+    justify-content: center;
+}
+
+.banned_img{
+    margin-right: 10px;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
 }
 
 #serviço {

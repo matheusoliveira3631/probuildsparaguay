@@ -1,9 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from camp.models import Campeao
-import requests
-import json
-import ast
+import requests, json, ast
+
 #o código mais podre e precario q eu já escrevi
 def LimpaNome(nome):
     invalidos=["'",' ', '.']
@@ -43,7 +42,7 @@ def LimpaNome(nome):
 ################API da riot pega os campeao foda########################
     #teacher vai se fude
     #API key própria(atualizar toda semana q merdakkkkkkkkkkk)
-riot_api_key=('RGAPI-65a4dd9c-9863-40e3-a1e6-bb36786aa111')
+riot_api_key='RGAPI-6af3575e-0aea-4315-9de1-5bd135629375'
 campeoes=Campeao.objects.all()
 
 try :
@@ -51,7 +50,11 @@ try :
     ftp_ids=content['freeChampionIds']
     ftp_nomes=[]
     for id in ftp_ids:
-        camp=Campeao.objects.get(riot_key=str(id))
+        if len(str(id))<=2:
+            key='0'+str(id)
+        else:
+            key=str(id)
+        camp=Campeao.objects.get(riot_key=key)
         dict={
             'nome':camp.nome,
             'nomelimpo':LimpaNome(camp.nome)
@@ -86,6 +89,20 @@ try:
     player_data=Get_ranked_data() 
 except:
     print("Could not reach Riot games Ranked API")
+##
+def Get_bans(number):
+    bans=[]
+    champions=[]
+    data=json.loads(requests.get("http://massacoteleaguebans.cleverapps.io/full").content.decode('utf-8'))
+    for champion in data:
+        bans.append(float(champion['Ban_rate']))
+    sort=sorted(bans)[-int(number):]
+    sort.reverse()
+    for percentage in sort:
+        data=json.loads(requests.get('http://massacoteleaguebans.cleverapps.io/get?ban_percentage=%s'%str(percentage)).content.decode('utf-8'))
+        champions.append(data)
+    return champions
+            
 
 ##############status do servidor merda da riotkkkkkkkk###############
 def Get_server_status():
@@ -108,12 +125,18 @@ try:
     server_data=Get_server_status()
 except:
     print('Could not reach Riot Games status API')
+
+try:
+    bans=Get_bans(5)
+except:
+    print("Massacote API not avaliable")
 ####################################################################
 
 # Create your views here.
 #Código que pega os campeões em rotação e passa como contexto pro html
 def index(request):
     context={
-        "ftp_nomes":ftp_nomes, 'player_data':player_data, 'server_data':server_data
+        "ftp_nomes":ftp_nomes, 'player_data':player_data, 'server_data':server_data,
+        'bans':bans
     }
     return render(request, 'home\homepage.html', context)

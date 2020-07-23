@@ -56,8 +56,7 @@ def Get_champions():
         camps.append(dict)
     return camps
 ##############################################
-def index(request):
-    
+def index(request):   
     try:
         camps=Get_champions()
         context={
@@ -80,43 +79,51 @@ def build(request, nome):
             'titulo':campeao.titulo,
             'tipo':campeao.tipo
         }
-        iniciais={
-            'inicial1':campeao.inicial1.riot_id,
-            'inicial2':campeao.inicial2.riot_id,
-            'inicial3':campeao.inicial3.riot_id
-        }
-        itens={    
-            'item1':campeao.item1.riot_id,
-            'item2':campeao.item2.riot_id,
-            'item3':campeao.item3.riot_id,
-            'item4':campeao.item4.riot_id,
-            'item5':campeao.item5.riot_id,
-            'item6':campeao.item6.riot_id
-        }
+        ##
+        inicial1=campeao.inicial1.riot_id
+        inicial2=campeao.inicial2.riot_id
+        inicial3=campeao.inicial3.riot_id
+        iniciais=[inicial1, inicial2, inicial3]
+        ## 
+        item1=campeao.item1.riot_id
+        item2=campeao.item2.riot_id
+        item3=campeao.item3.riot_id
+        item4=campeao.item4.riot_id
+        item5=campeao.item5.riot_id
+        item6=campeao.item6.riot_id
+        early=[item1,item2,item3]
+        late=[item4,item5,item6]
+        full=early+late
+        ##
         spells={
             'qspell':{
                 'nome':campeao.qspell.nome,
                 'desc':campeao.qspell.desc,
-                'id':campeao.qspell.spell_id
+                'id':campeao.qspell.spell_id,
+                'link':campeao.qspell.video_link
             },
             'wspell':{
                 'nome':campeao.wspell.nome,
                 'desc':campeao.wspell.desc,
-                'id':campeao.wspell.spell_id
+                'id':campeao.wspell.spell_id,
+                'link':campeao.wspell.video_link
             },
             'espell':{
                 'nome':campeao.espell.nome,
                 'desc':campeao.espell.desc,
-                'id':campeao.espell.spell_id
+                'id':campeao.espell.spell_id,
+                'link':campeao.espell.video_link
             },
             'rspell':{
                 'nome':campeao.rspell.nome,
                 'desc':campeao.rspell.desc,
-                'id':campeao.rspell.spell_id
+                'id':campeao.rspell.spell_id,
+                'link':campeao.rspell.video_link
             }
         }        
         context={
-            'info':info, 'iniciais':iniciais, 'itens':itens, 'spells':spells
+            'info':info, 'iniciais':iniciais, 'early':early, 'late':late,
+            'full':full, 'spells':spells
         }
         return render(request, "camp/build.html", context)
     except:

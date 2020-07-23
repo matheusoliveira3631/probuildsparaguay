@@ -1,4 +1,5 @@
 from django.db import models
+import slug
 ###############################################
 #teacher vai toma no cu
 ###############################################
@@ -14,9 +15,9 @@ class Spell(models.Model):
     nome=models.CharField(max_length=255, null=False, blank=True, default='Spell')
     desc=models.CharField(max_length=255, null=False, blank=True, default='Descrição')
     spell_id=models.CharField(max_length=100, null=False, blank=True, default='id')
+    video_link=models.CharField(max_length=255, null=False, blank=True)
     def __str__(self):
         return self.nome
-
 
 
 class Campeao(models.Model):
